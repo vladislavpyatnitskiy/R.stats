@@ -1,5 +1,5 @@
 permutation.coefficient <- function(x, y){ # Permutation Coefficient
   
-  prod(seq(x)) / prod(seq(x - y))
+  factorial(x) / factorial(x - y)
 }
 permutation.coefficient(5,2) # Test
