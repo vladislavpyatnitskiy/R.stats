@@ -1,9 +1,7 @@
-binomial.distribution.negative <- function(x, y, p){ # Negative Binom Dist
+binomial.distribution.negative <- function(x, y, p){ # Negative Binomial
   
-  if (y == 0){ print("Use Geometric Distriubtion Please") } else if (y == 1){
+  if (y == 0){ print("Use Geometric Distriubtion Please") } else {
   
-      prod(seq(x - 1))/(prod(seq(1))*prod(seq(x - y - 1)))*p^y*(1 - p)^(x - y)
-  
-  } else { prod(seq(x-1))/(prod(seq(y-1))*prod(seq(x-y-1)))*p^y*(1-p)^(x-y)} 
+  factorial(x-1) / (factorial(y-1) * factorial(x-y-1)) * p^y * (1-p)^(x-y) }
 }
-binomial.distribution.negative(4,2,.9) # Test
+binomial.distribution.negative(4, 1, .9) # Test
